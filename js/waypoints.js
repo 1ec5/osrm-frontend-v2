@@ -13,7 +13,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_toke
 L.Control.geocoder().addTo(map);
 
 /* Routing control with LRM */
-L.Routing.control({
+var control = L.Routing.control({
     waypoints: [
         L.latLng(38.928674, -77.004756),
         L.latLng(38.914072, -77.032507)
@@ -22,35 +22,11 @@ L.Routing.control({
 	geocoder: L.Control.Geocoder.nominatim()
 }).addTo(map);
 
-/* Make popup buttons */
-function createButton(label, container) {
-    var btn = L.DomUtil.create('button', '', container);
-    btn.setAttribute('type', 'button');
-    btn.innerHTML = label;
-    return btn;
-}
 
 map.on('click', function(e) {
-    var container = L.DomUtil.create('div'),
-        startBtn = createButton('Start from this location', container),
-        destBtn = createButton('Go to this location', container);
-
-    L.popup()
-        .setContent(container)
-        .setLatLng(e.latlng)
-        .openOn(map);
+	control.spliceWaypoints(0, 1, e.latlng);
 });
 
-/* Make popup buttons */
-map.on(startBtn, 'click', function() {
-    control.spliceWaypoints(0, 1, e.latlng);
-    map1.closePopup();
-});
-
-map.on(destBtn, 'click', function() {
-    control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
-    map1.closePopup();
-});
 
 
 
