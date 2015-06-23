@@ -9,10 +9,16 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_toke
     accessToken: 'pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg'
 }).addTo(map);
 
+/*    Geocoder w/ Control.geocoder   */
+L.Control.geocoder().addTo(map);
+
+/* Routing control with LRM */
 L.Routing.control({
     waypoints: [
         L.latLng(38.928674, -77.004756),
         L.latLng(38.914072, -77.032507)
     ],
-    routeWhileDragging: true
+    routeWhileDragging: true,
+	geocoder: L.Control.Geocoder.nominatim()
 }).addTo(map);
+
