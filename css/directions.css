@@ -14,3 +14,20 @@ html, body {
 	z-index: 0;
 	position: relative;
 }
+
+.clean .leaflet-routing-geocoders input {
+  width: calc(100% - 45px);
+  margin-right: 30px;
+  line-height: 2;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+.clean .leaflet-routing-remove-waypoint {
+	margin-bottom: 5px;
+}
+
+.clean .leaflet-routing-remove-waypoint:after {
+	padding-right: 9px;
+}

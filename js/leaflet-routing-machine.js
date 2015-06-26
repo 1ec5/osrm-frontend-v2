@@ -1878,13 +1878,80 @@ if (typeof module !== undefined) module.exports = polyline;
 				};
 			},
 			createMarker: function(i, wp) {
+				//console.log(this._markers.length);
 				var options = {
 						draggable: this.draggableWaypoints
 					},
 				    marker = L.marker(wp.latLng, options);
-
 				return marker;
 			},
+
+			/* // KIND OF WORKS BUT NO LENGTH ACCESS 
+
+			createMarker: function(i, wp) {
+				console.log(this._markers.length);
+				var options = {
+					draggable: this.draggableWaypoints
+				};
+				if (i == 0) {
+				var myIcon = L.icon({
+					iconUrl: '/images/marker-green-icon.png',
+					iconRetinaUrl: '/images/marker-green-icon-2x.png',
+					iconSize: [20, 33]
+				});
+				var marker = L.marker(wp.latLng, {
+					icon: myIcon,
+					draggable: options
+				});
+				} else {
+					//innerCount ++;
+				}
+
+
+				return marker;
+			},*/
+
+
+/*
+			createMarker: function(i, wp) {
+				var options = {
+						draggable: this.draggableWaypoints
+					};
+
+				if (i == 0) {
+						var myIcon = L.icon({
+						    iconUrl: '/images/marker-green-icon.png',
+						    iconRetinaUrl: '/images/marker-green-icon-2x.png',
+						    iconSize: [20, 33]
+						});
+						var marker = L.marker([wp.latLng.lat, wp.latLng.lng], {
+							icon: myIcon,
+							draggable: options
+						}).addTo(map);
+					} else if (i === this.waypoints.length - 1) {
+						var myIcon = L.icon({
+						    iconUrl: '/images/marker-red-icon.png',
+						    iconRetinaUrl: '/images/marker-red-icon-2x.png',
+						    iconSize: [20, 33]
+						});
+						var marker = L.marker([wp.latLng.lat, wp.latLng.lng], {
+							icon: myIcon,
+							draggable: options
+						}).addTo(map);
+					} else {
+						var myIcon = L.icon({
+						    iconUrl: '/images/marker-icon.png',
+						    iconRetinaUrl: '/images/marker-icon-2x.png',
+						    iconSize: [20, 33]
+						});
+						var marker = L.marker([wp.latLng.lat, wp.latLng.lng], {
+							icon: myIcon,
+							draggable: options
+						}).addTo(map);
+					}
+
+				return marker;
+			},*/
 			waypointNameFallback: function(latLng) {
 				var ns = latLng.lat < 0 ? 'S' : 'N',
 				    ew = latLng.lng < 0 ? 'W' : 'E',
