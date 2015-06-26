@@ -1878,7 +1878,6 @@ if (typeof module !== undefined) module.exports = polyline;
 				};
 			},
 			createMarker: function(i, wp) {
-				//console.log(this._markers.length);
 				var options = {
 						draggable: this.draggableWaypoints
 					},

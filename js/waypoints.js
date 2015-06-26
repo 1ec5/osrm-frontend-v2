@@ -18,7 +18,8 @@ var ended = false;
 var control = L.Routing.control({
     routeWhileDragging: true,
 	geocoder: L.Control.Geocoder.nominatim(),
-	reverseWaypoints: true
+	reverseWaypoints: true,
+	useZoomParameter: true
 }).addTo(map);
 
 /*  Click on map to choose Start or End locations  */
