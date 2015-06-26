@@ -3915,7 +3915,7 @@ var options = {
     josmButtonClass: 'mapbox-directions-icon mapbox-josm-icon',
     localizationButtonClass: 'mapbox-directions-icon mapbox-flag-icon',
     printButtonClass: 'icon printer',
-    toolsContainerClass: 'fill-dark dark',
+    toolsContainerClass: 'fill-gray2 dark',
   }
 };
 
@@ -4298,12 +4298,12 @@ module.exports = function (lrm, options) {
 "use strict";
 
 var defaultView = {
-  center: L.latLng(48.84, 10.10),
-  zoom: 5,
+  center: L.latLng(38.8995,-77.0269),
+  zoom: 13,
   waypoints: [],
   language: 'en',
   service: 'Car (fastest)',
-  layer: 'OSRM bright',
+  layer: 'Mapbox Light',
 };
 
 var defaultControl = {
@@ -4319,23 +4319,28 @@ var services = {
 };
 
 var layers = {
-  'OSRM bright': L.tileLayer('https://{s}.tiles.mapbox.com/v3/dennisl.4e2aab76/{z}/{x}/{y}.png',
+  'Mapbox Light': L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.light/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg',
   {
     attribution:'<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/">Improve this map</a>',
     maxZoom: 18
   }),
-  'Mapbox Terrain': L.tileLayer('https://{s}.tiles.mapbox.com/v3/dennisl.map-dfbkqsr2/{z}/{x}/{y}.png',
+  'Mapbox Dark': L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.dark/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg',
   {
     attribution:'<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/">Improve this map</a>',
     maxZoom: 18
   }),
 
-  'Mapbox Labelled Satellite': L.tileLayer('https://{s}.tiles.mapbox.com/v3/dennisl.map-6g3jtnzm/{z}/{x}/{y}.png',
+  'Mapbox Outdoors': L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg',
   {
     attribution: '<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/">Improve this map</a>',
     maxZoom: 18
   }),
-  'Mapbox Satellite': L.tileLayer('https://{s}.tiles.mapbox.com/v3/dennisl.map-inp5al1s/{z}/{x}/{y}.png',
+  'Mapbox Satellite': L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg',
+  {
+    attribution: '<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/">Improve this map</a>',
+    maxZoom: 18
+  }),
+  'Mapbox Streets Satellite': L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg',
   {
     attribution: '<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/">Improve this map</a>',
     maxZoom: 18
@@ -4350,11 +4355,10 @@ var layers = {
     attribution: '© <a href="http://www.openstreetmap.org/copyright/en">OpenStreetMap</a> contributors',
     maxZoom: 18
   }),
-  'MapQuest': L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+  'Mapbox Emerald': L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.emerald/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg',
   {
-      attribution:'© <a href="http://www.openstreetmap.org/copyright/en">OpenStreetMap</a> contributors, Imagery © <a href="http://www.mapquest.de/">MapQuest</a>',
-      maxZoom: 18,
-      subdomains: '1234'
+    attribution: '<a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/">Improve this map</a>',
+    maxZoom: 18
   })
 };
 

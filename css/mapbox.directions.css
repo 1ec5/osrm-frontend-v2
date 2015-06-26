@@ -220,9 +220,15 @@ input:not(:valid) + .mapbox-close-icon {
 .mapbox-sharp-left-icon       { background-position: -100px 0; }
 .mapbox-turn-left-icon        { background-position: -120px 0; }
 .mapbox-bear-left-icon        { background-position: -140px 0; }
-.mapbox-depart-icon           { background-position: -160px 0; }
+.mapbox-depart-icon           { 
+	background-position: -160px -1; 
+	background-color: #87DE9F;
+}
 .mapbox-enter-roundabout-icon { background-position: -180px 0; }
-.mapbox-arrive-icon           { background-position: -200px 0; }
+.mapbox-arrive-icon           { 
+	background-position: -200px 0; 
+	background-color: #DB5C0A;
+}
 .mapbox-close-icon            { background-position: -220px 0; }
 .mapbox-reverse-icon          { background-position: -240px 0; }
 .mapbox-error-icon            { background-position: -260px 0; }

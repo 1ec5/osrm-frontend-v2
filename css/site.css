@@ -1,3 +1,51 @@
+.leaflet-control {
+  float: right;
+  clear: none;
+}
+
+.leaflet-left .leaflet-control-scale {
+  margin-left: -170px;
+}
+
+.leaflet-bottom .leaflet-control-scale {
+  margin-bottom: 40px;
+}
+
+/*  COLORS  */
+
+.fill-tan {
+	background-color: #FFF8E3;
+}
+
+.fill-palegreen {
+	background-color: #ABCC9F;
+}
+
+.fill-green {
+	background-color: #87DE9F;
+}
+
+.fill-olive {
+	background-color: #33332D;
+}
+
+.fill-sky {
+	background-color: #9FB4CC;
+}
+
+.fill-orange {
+	background-color: #DB5C0A;
+}
+
+.fill-gray2 {
+	background-color: #868686;
+}
+
+
+
+/* MAP */
+
+
 #map {
     width: 100%;
     height: 100%;
@@ -63,7 +111,7 @@ button.mapbox-directions-button-add
 
 .leaflet-routing-alt-minimized
 {
-    height: 7%;
+    height: 35%;
 }
 
 .leaflet-routing-container.dark
@@ -79,7 +127,7 @@ button.mapbox-directions-button-add
 
 .leaflet-control-layers
 {
-  background-color: #404040;
+  background-color: #868686;
   color: #fff;
 }
 
@@ -110,16 +158,18 @@ button.mapbox-directions-button-add
   padding-left: 20px;
 }
 
+/* Summary color change */
 .leaflet-routing-alt .mapbox-directions-summary
 {
-  color: #ee8a65;
-  border-color: #ee8a65;
+  color: #ABCC9F;
 }
 
 .mapbox-directions-summary h2
 {
-  font-size: 22px;
-  font-weight: normal;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 22px;
+  margin-right: 15px;
 }
 .mapbox-directions-summary h3
 {
@@ -128,10 +178,11 @@ button.mapbox-directions-button-add
 
 .leaflet-routing-alt-minimized .mapbox-directions-summary
 {
-  color: #fff;
-  border-color: #fff;
+  color: #DB5C0A;
+  padding-top: 10px;
 }
 
+/* DIRECTIONS UI */
 
 .mapbox-directions-inputs
 {
@@ -143,13 +194,21 @@ button.mapbox-directions-button-add
    max-width: 500px;
    min-width: 200px;
 }
+
 .mapbox-form-label {
   cursor: default;
 }
 
+/* start point */
 .mapbox-directions-origin .mapbox-form-label {
-    background-color: #ee8a65;
+    background-color: #87DE9F;
 }
+
+/* end point */
+.mapbox-directions-destination .mapbox-form-label {
+ 	background-color: #D99419;
+}
+
 .mapbox-directions-via {
     background-color: white;
     position: relative;
