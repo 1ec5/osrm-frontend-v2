@@ -4303,7 +4303,7 @@ var defaultView = {
   waypoints: [],
   language: 'en',
   service: 'Car (fastest)',
-  layer: 'Mapbox Light',
+  layer: 'Mapbox Emerald',
 };
 
 var defaultControl = {

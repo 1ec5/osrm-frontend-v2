@@ -1,10 +1,6 @@
-.leaflet-control {
-  float: right;
-  clear: none;
-}
 
 .leaflet-left .leaflet-control-scale {
-  margin-left: -170px;
+  margin-left: -135px;
 }
 
 .leaflet-bottom .leaflet-control-scale {
@@ -125,6 +121,7 @@ button.mapbox-directions-button-add
    margin: 0px !important;
 }
 
+/* control bar */
 .leaflet-control-layers
 {
   background-color: #868686;
